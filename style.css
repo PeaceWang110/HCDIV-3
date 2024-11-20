@@ -1,1 +1,71 @@
-
+const ctx = document.getElementById('priceTrendChart').getContext('2d');
+const data = {
+    labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+    datasets: [
+        {
+            label: 'ANG MO KIO',
+            data: [315994.4030710173, 295067.81785063754, 282264.6347992352, 295265.9125248509, 331721.6382978723, 376950.54734848486, 400821.9628942486, 424912.9744094488],
+            borderColor: 'red',
+            fill: false
+        },
+        {
+            label: 'BEDOK',
+            data: [306876.390593047, 296320.106122449, 283983.62890625, 289222.37386569876, 328491.27046263346, 358523.9981884058, 380468.95406360424, 402983.1018329939],
+            borderColor: 'blue',
+            fill: false
+        },
+        {
+            label: 'BUKIT BATOK',
+            data: [274558.7428571429, 262982.2475884244, 253129.04912280702, 262647.47540983604, 317512.11155378487, 361273.6797153025, 400486.5934065934, 412008.72703412076],
+            borderColor: 'green',
+            fill: false
+        },
+        {
+            label: 'QUEENSTOWN',
+            data: [382747.7878838174, 376524.75, 357154.59541984735, 370499.45588235295, 405403.4520547945, 437601.0457317073, 441394.4743083004, 452989.9674267101],
+            borderColor: 'purple',
+            fill: false
+        },
+        {
+            label: 'YISHUN',
+            data: [281051.245, 267906.1848101266, 272488.7248908297, 284312.55529411766, 330116.5730088496, 371607.51582867786, 391085.00598802394, 420857.73193473194],
+            borderColor: 'orange',
+            fill: false
+        }
+    ]
+};
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: '3-Room Average Resale Price Trends (2017-2024)'
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Year'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Average Resale Price (SGD)'
+                },
+                beginAtZero: false,
+                ticks: {
+                    stepSize: 50000
+                }
+            }
+        }
+    }
+};
+new Chart(ctx, config);
