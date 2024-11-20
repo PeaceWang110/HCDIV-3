@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3-Room Resale Price Trends (2017-2024)</title>
+    <title>Average Resale Prices of 3-Room Flats in Five Areas of Singapore (2017-2024)</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            text-align: justify;
+            margin: 0 20px 20px 20px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>3-Room Average Resale Price Trends (2017-2024)</h1>
-    <canvas id="priceTrendChart" width="800" height="400"></canvas>
+    <h1>Average Resale Prices of 3-Room Flats in Five Areas of Singapore (2017-2024)</h1>
+    <p>1. The table shows the average resale prices of 3-room flats in Ang Mo Kio, Bedok, Bukit Batok, Queenstown, and Yishun from 2017 to 2024.</p>
+    <p>2. The data comes from HDB's public records, focusing on 3-room flat prices in these areas.</p>
+    <p>3. Over eight years, Queenstown had the highest average resale prices, peaking at SGD 450,000 in 2024, while prices in the other areas were similar and showed an overall upward trend.</p>
+    <canvas id="priceTrendChart" width="700" height="350"></canvas>
     <script>
         const ctx = document.getElementById('priceTrendChart').getContext('2d');
         const data = {
@@ -57,7 +79,7 @@
                     },
                     title: {
                         display: true,
-                        text: '3-Room Average Resale Price Trends (2017-2024)'
+                        text: 'Average Resale Prices of 3-Room Flats in Five Areas of Singapore (2017-2024)'
                     }
                 },
                 scales: {
